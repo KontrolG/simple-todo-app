@@ -22,7 +22,8 @@ const cardStyles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 24,
-    marginLeft: 16
+    marginLeft: 16,
+    flex: 1
   }
 });
 
@@ -41,7 +42,9 @@ export function TodoCard({
 }: TodoCardProps) {
   return (
     <View style={[cardStyles.container, style]}>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View
+        style={{ flexDirection: "row", alignItems: "center", marginBottom: 16 }}
+      >
         <Switch
           value={todo.isDone}
           onValueChange={() => onToggleIsDone?.(todo.id)}
